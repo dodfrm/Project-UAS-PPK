@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.organisasi.OrganisasiFragment">
+    tools:context=".ui.dosen.DosenFragment">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Organisasi" />
+        android:text="Dosen" />
 
 </FrameLayout>

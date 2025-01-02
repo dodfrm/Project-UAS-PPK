@@ -1,4 +1,4 @@
-package com.example.uasppk.ui.organisasi
+package com.example.uasppk.ui.dosen
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import com.example.uasppk.databinding.FragmentOrganisasiBinding
+import com.example.uasppk.databinding.FragmentDosenBinding
 
-class OrganisasiFragment : Fragment() {
+class DosenFragment : Fragment() {
 
-    private var _binding: FragmentOrganisasiBinding? = null
+    private var _binding: FragmentDosenBinding? = null
 
     private val binding get() = _binding!!
 
@@ -19,9 +19,11 @@ class OrganisasiFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val organisasiViewModel = ViewModelProvider(this).get(OrganisasiViewModel::class.java)
-        _binding = FragmentOrganisasiBinding.inflate(inflater, container, false)
+        val dosenViewModel = ViewModelProvider(this).get(DosenViewModel::class.java)
+
+        _binding = FragmentDosenBinding.inflate(inflater, container, false)
         val root: View = binding.root
+
         return root
     }
 

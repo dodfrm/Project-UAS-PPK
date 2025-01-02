@@ -22,4 +22,17 @@
         android:name="com.example.uasppk.ui.matkul.MatkulFragment"
         android:label="@string/menu_matkul"
         tools:layout="@layout/fragment_matkul" />
+
+    <fragment
+        android:id="@+id/nav_dosen"
+        android:name="com.example.uasppk.ui.dosen.DosenFragment"
+        android:label="@string/menu_dosen"
+        tools:layout="@layout/fragment_dosen" />
+
+    <fragment
+        android:id="@+id/nav_organisasi"
+        android:name="com.example.uasppk.ui.organisasi.OrganisasiFragment"
+        android:label="@string/menu_organisasi"
+        tools:layout="@layout/fragment_organisasi" />
+
 </navigation>

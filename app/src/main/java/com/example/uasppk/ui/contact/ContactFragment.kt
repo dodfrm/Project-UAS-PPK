@@ -11,7 +11,7 @@ import com.example.uasppk.databinding.FragmentContactBinding
 
 class ContactFragment : Fragment() {
 
-private var _binding: FragmentContactBinding? = null
+  private var _binding: FragmentContactBinding? = null
   // This property is only valid between onCreateView and
   // onDestroyView.
   private val binding get() = _binding!!
@@ -34,7 +34,7 @@ private var _binding: FragmentContactBinding? = null
     return root
   }
 
-override fun onDestroyView() {
+    override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }

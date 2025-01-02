@@ -1,7 +1,7 @@
 package com.example.uasppk
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -11,17 +11,29 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.uasppk.databinding.ActivityMainBinding
+import com.example.uasppk.utils.SharedPreferencesHelper
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-     binding = ActivityMainBinding.inflate(layoutInflater)
-     setContentView(binding.root)
+        val sharedPreferencesHelper = SharedPreferencesHelper(this)
+
+        // Cek apakah user sudah login
+        if (!sharedPreferencesHelper.isLoggedIn()) {
+            // Jika belum login, arahkan ke Activity auth
+            val intent = Intent(this, Auth::class.java)
+            startActivity(intent)
+            finish() // Tutup MainActivity agar tidak kembali ke sini
+            return
+        }
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
@@ -31,7 +43,7 @@ private lateinit var binding: ActivityMainBinding
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(setOf(
-            R.id.nav_home, R.id.nav_contact, R.id.nav_matkul), drawerLayout)
+            R.id.nav_home, R.id.nav_contact, R.id.nav_matkul, R.id.nav_dosen, R.id.nav_organisasi), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
     }
