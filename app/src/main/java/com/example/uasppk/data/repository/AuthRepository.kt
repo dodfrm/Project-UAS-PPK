@@ -12,6 +12,7 @@ class AuthRepository(private val apiService: ApiService){
         } else {
             val errorMessage = when (response.code()) {
                 400 -> "Bad Request: ${response.errorBody()?.string()}"
+                404 -> "Page Not Found"
                 401 -> "Unauthorized: Invalid email or password"
                 500 -> "Server Error: Please try again later"
                 else -> "Unexpected Error: ${response.code()}"

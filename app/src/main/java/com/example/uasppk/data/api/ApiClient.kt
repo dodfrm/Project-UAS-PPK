@@ -6,11 +6,11 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiClient {
-    private const val BASE_URL = "http://192.168.56.1:8080/"
+    private const val BASE_URL = "http://192.168.1.33:8080/"
 
-    fun getApiService(token: String?): ApiService {
+    fun getApiService(accessToken: String?): ApiService {
         val client = OkHttpClient.Builder()
-            .addInterceptor(AuthInterceptor(token))
+            .addInterceptor(AuthInterceptor(accessToken))
             .build()
 
         val retrofit = Retrofit.Builder()
