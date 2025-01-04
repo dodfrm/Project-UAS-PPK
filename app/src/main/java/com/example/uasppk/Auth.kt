@@ -68,9 +68,12 @@ class Auth : AppCompatActivity() {
             setLoadingState(isLoading)
         }
 
-        // Set up sign-up link (if needed)
+        // Set up sign-up link
         signupLink.setOnClickListener {
-            Toast.makeText(this, "Navigasi ke halaman daftar belum diimplementasi", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+            finish()
+            return@setOnClickListener
         }
     }
 

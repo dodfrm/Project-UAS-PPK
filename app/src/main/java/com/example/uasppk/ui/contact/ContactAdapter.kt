@@ -27,7 +27,7 @@ class ContactAdapter: RecyclerView.Adapter<ContactAdapter.ContactViewHolder>() {
         holder.phoneTextView.text = contact.phone
     }
 
-    fun getItemCount(): Int = contacts.size
+    override fun getItemCount(): Int = contacts.size
 
     fun submitList(newContacts: List<Contact>) {
         contacts.clear()

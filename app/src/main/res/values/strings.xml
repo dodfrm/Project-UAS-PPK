@@ -24,4 +24,9 @@
     <string name="login_failed">"Login failed"</string>
     <string name="welcome_message">Selamat Datang</string>
     <string name="signup_prompt">Belum Punya Akun? Daftar Sekarang</string>
+    <string name="login_prompt">Sudah Punya Akun? Login Sekarang</string>
+    <string name="action_sign_up">SIGN UP</string>
+    <string name="prompt_confirmPassword">Confirm Password</string>
+    <string name="prompt_name">Username</string>
+    <string name="signup_message">REGISTER</string>
 </resources>

@@ -10,6 +10,7 @@ import kotlinx.coroutines.launch
 class AuthViewModel(private val repository: AuthRepository) : ViewModel() {
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading
+
     private val _loginResult = MutableLiveData<String>()
     val loginResult: LiveData<String> = _loginResult
 

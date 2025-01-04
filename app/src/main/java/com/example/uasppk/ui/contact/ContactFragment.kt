@@ -46,16 +46,16 @@ class ContactFragment : Fragment() {
     binding.recyclerView.adapter = adapter
 
     // Observe data from ViewModel
-    contactsViewModel.contacts.observe(viewLifecycleOwner) { contacts ->
-      adapter.submitList(contacts)
-    }
+//    contactsViewModel.contacts.observe(viewLifecycleOwner) { contacts ->
+//      adapter.submitList(contacts)
+//    }
 
-    contactsViewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
-      binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
-    }
-
-    // Fetch contacts
-    contactsViewModel.fetchContact()
+//    contactsViewModel.isLoading.observe(viewLifecycleOwner) { isLoading ->
+//      binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
+//    }
+//
+//    // Fetch contacts
+//    contactsViewModel.fetchContact()
   }
 
   override fun onDestroyView() {
